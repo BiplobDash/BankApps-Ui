@@ -74,10 +74,6 @@ class Deshboard extends StatelessWidget {
 
 
 
-
-
-
-
 Widget carouselSlided(img, txt, dlr) {
   return Container(
     height: 120,
