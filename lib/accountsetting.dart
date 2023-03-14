@@ -67,7 +67,9 @@ class AccountSetting extends StatelessWidget {
                               fontWeight: FontWeight.w600,
                               fontSize: 18
                             ),),
-                            trailing: IconButton(onPressed: (){},
+                            trailing: IconButton(onPressed: (){
+                              
+                            },
                                 icon: Icon(Icons.arrow_forward_ios, color: Colors.black87,size: 20,)),
 
                           ),

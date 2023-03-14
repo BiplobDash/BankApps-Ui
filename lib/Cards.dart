@@ -1,12 +1,21 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 
+import 'newBankCard.dart';
+
+
 class MyCards extends StatelessWidget {
   double _value = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          AddNewBankCard();
+        },
+        child: Icon(Icons.add),
+      ),
       body: SafeArea(
           child: Column(
         children: [

@@ -32,7 +32,6 @@ class _HomeState extends State<Home> {
   ];
 
   int _counter = 0;
-  double _value = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +43,7 @@ class _HomeState extends State<Home> {
             SizedBox(height: 50,),
             new DotsIndicator(
               dotsCount: 4,
-              position: _value,
+              position: _counter.toDouble(),
             ),
             Expanded(child: Container(
               decoration: BoxDecoration(

@@ -36,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     // TODO: implement initState
     Timer(Duration(seconds: 3), () => Navigator.push(context,
-        CupertinoPageRoute(builder: (_)=> BottomNavController())));
+        CupertinoPageRoute(builder: (_)=> Home())));
   }
 
   @override

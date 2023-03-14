@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:project_3/goodjob.dart';
 
+import 'forgot.dart';
+
 class AddAccount extends StatefulWidget {
   @override
   State<AddAccount> createState() => _AddAccountState();
@@ -90,7 +92,7 @@ class _AddAccountState extends State<AddAccount> {
                     height: 65,
                     child: ElevatedButton(onPressed: (){
                       Navigator.pushReplacement(context,
-                          CupertinoPageRoute(builder: (_)=> GoodJob()));
+                          CupertinoPageRoute(builder: (_)=> Forgot()));
                     },
                         style: ElevatedButton.styleFrom(
                           primary: Colors.green

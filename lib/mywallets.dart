@@ -1,39 +1,47 @@
-
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-
-
+import 'package:project_3/newaccount.dart';
 
 class MyWallets extends StatelessWidget {
-
   double _value = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: (){}, child: Icon(Icons.add),),
-      body:SafeArea(
-        child:Container(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          AddAccount();
+        },
+        child: Icon(Icons.add),
+      ),
+      body: SafeArea(
+        child: Container(
           color: Colors.grey,
-          child:SingleChildScrollView(
+          child: SingleChildScrollView(
             child: Column(
               children: [
                 Padding(
                   padding: const EdgeInsets.all(10.0),
-                  child: Text('My Wallets', style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 30,
-                  ),),
+                  child: Text(
+                    'My Wallets',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 30,
+                    ),
+                  ),
                 ),
                 Divider(),
-                carouselSlided("assets/images/img.png",'NGN', 'Q190,000', Colors.purple),
+                carouselSlided(
+                    "assets/images/img.png", 'NGN', 'Q190,000', Colors.purple),
                 new DotsIndicator(
                   dotsCount: 1,
                   position: _value,
                 ),
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ),
                 cntan(),
               ],
             ),
@@ -43,13 +51,6 @@ class MyWallets extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-
 
 Widget carouselSlided(img, txt, dlr, color) {
   return Container(
@@ -71,40 +72,48 @@ Widget carouselSlided(img, txt, dlr, color) {
           ),
           child: Column(
             children: [
-
-
               Row(
                 children: [
-                  Image.asset(img,width: 20,),
+                  Image.asset(
+                    img,
+                    width: 20,
+                  ),
                   Padding(
                     padding: const EdgeInsets.only(left: 5),
-                    child: Text(txt,style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 13
-                    ),),
+                    child: Text(
+                      txt,
+                      style: TextStyle(color: Colors.white, fontSize: 13),
+                    ),
                   ),
                 ],
               ),
               Divider(),
               Padding(
                 padding: const EdgeInsets.only(right: 100),
-                child: Text('AVAILABLE BALANCE',style: TextStyle(
-                    color: Colors.black54,
-                    fontSize: 10
-                ),),
+                child: Text(
+                  'AVAILABLE BALANCE',
+                  style: TextStyle(color: Colors.black54, fontSize: 10),
+                ),
               ),
               Divider(),
               Row(
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(right: 70),
-                    child: Text(dlr,style: TextStyle(
-                      fontSize: 25,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600,
-                    ),),
+                    child: Text(
+                      dlr,
+                      style: TextStyle(
+                        fontSize: 25,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
                   ),
-                  Icon(Icons.arrow_forward,color: Colors.green,size: 15,)
+                  Icon(
+                    Icons.arrow_forward,
+                    color: Colors.green,
+                    size: 15,
+                  )
                 ],
               )
             ],
@@ -115,19 +124,19 @@ Widget carouselSlided(img, txt, dlr, color) {
   );
 }
 
-Widget cntan(){
+Widget cntan() {
   return Container(
       decoration: const BoxDecoration(
         color: Colors.grey,
         borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20),
-            topRight: Radius.circular(20)
-        ),
+            topLeft: Radius.circular(20), topRight: Radius.circular(20)),
       ),
-      child:Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 10,),
+          SizedBox(
+            height: 10,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -136,54 +145,64 @@ Widget cntan(){
                 width: 80,
                 decoration: BoxDecoration(
                     color: Colors.lightGreen.shade900,
-                    borderRadius: BorderRadius.all(
-                        Radius.circular(50)
-                    )
+                    borderRadius: BorderRadius.all(Radius.circular(50))),
+                child: Image.asset(
+                  'assets/images/img_8.png',
+                  width: 40,
+                  height: 40,
                 ),
-                child:Image.asset('assets/images/img_8.png',width: 40,height: 40,),
               ),
               Container(
                 height: 80,
                 width: 80,
                 decoration: BoxDecoration(
                     color: Colors.lightGreen.shade900,
-                    borderRadius: BorderRadius.all(
-                        Radius.circular(50)
-                    )
+                    borderRadius: BorderRadius.all(Radius.circular(50))),
+                child: Image.asset(
+                  'assets/images/img_9.png',
+                  width: 30,
+                  height: 30,
                 ),
-                child:Image.asset('assets/images/img_9.png',width: 30,height: 30,),
               ),
               Container(
                 height: 80,
                 width: 80,
                 decoration: BoxDecoration(
                     color: Colors.lightGreen.shade900,
-                    borderRadius: BorderRadius.all(
-                        Radius.circular(50)
-                    )
+                    borderRadius: BorderRadius.all(Radius.circular(50))),
+                child: Image.asset(
+                  'assets/images/img_10.png',
+                  width: 30,
+                  height: 30,
                 ),
-                child:Image.asset('assets/images/img_10.png',width: 30,height: 30,),
               ),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text('Fund Wallet',style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w600,
-                fontSize: 17,
-              ),),
-              Text('Send Money',style: TextStyle(
+              Text(
+                'Fund Wallet',
+                style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w600,
-                  fontSize: 20
-              ),),
-              Text('Withdraw',style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 20
-              ),)
+                  fontSize: 17,
+                ),
+              ),
+              Text(
+                'Send Money',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 20),
+              ),
+              Text(
+                'Withdraw',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 20),
+              )
             ],
           ),
           Divider(),
@@ -193,24 +212,28 @@ Widget cntan(){
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20)
-                )
-            ),
+                    topRight: Radius.circular(20))),
             child: Column(
               children: [
                 Padding(
                   padding: const EdgeInsets.only(top: 10, right: 150),
-                  child: Text('Recent Transactions', style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 20,
-                  ),),
+                  child: Text(
+                    'Recent Transactions',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 20,
+                    ),
+                  ),
                 ),
                 Divider(),
                 ListTile(
                   leading: CircleAvatar(
                     backgroundColor: Colors.lightGreen,
-                    child: Image.asset('assets/images/img_11.png',color: Colors.blue,),
+                    child: Image.asset(
+                      'assets/images/img_11.png',
+                      color: Colors.blue,
+                    ),
                   ),
                   title: Text(
                     'Access Bank ',
@@ -220,9 +243,7 @@ Widget cntan(){
                   ),
                   subtitle: Text(
                     '28, Jan 2020',
-                    style: TextStyle(
-                        color: Colors.black38
-                    ),
+                    style: TextStyle(color: Colors.black38),
                   ),
                   trailing: Text(
                     '\$2,400',
@@ -236,7 +257,10 @@ Widget cntan(){
                 ListTile(
                   leading: CircleAvatar(
                     backgroundColor: Colors.redAccent,
-                    child: Image.asset('assets/images/img_12.png',color: Colors.blue,),
+                    child: Image.asset(
+                      'assets/images/img_12.png',
+                      color: Colors.blue,
+                    ),
                   ),
                   title: Text(
                     'Alpha Loans ',
@@ -246,9 +270,7 @@ Widget cntan(){
                   ),
                   subtitle: Text(
                     '28, Jan 2020',
-                    style: TextStyle(
-                        color: Colors.black38
-                    ),
+                    style: TextStyle(color: Colors.black38),
                   ),
                   trailing: Text(
                     'N10,000',
@@ -262,7 +284,10 @@ Widget cntan(){
                 ListTile(
                   leading: CircleAvatar(
                     backgroundColor: Colors.lightGreen,
-                    child: Image.asset('assets/images/img_11.png',color: Colors.blue,),
+                    child: Image.asset(
+                      'assets/images/img_11.png',
+                      color: Colors.blue,
+                    ),
                   ),
                   title: Text(
                     'Access Bank ',
@@ -272,9 +297,7 @@ Widget cntan(){
                   ),
                   subtitle: Text(
                     '28, Jan 2020',
-                    style: TextStyle(
-                        color: Colors.black38
-                    ),
+                    style: TextStyle(color: Colors.black38),
                   ),
                   trailing: Text(
                     'N4,500,000',
@@ -298,9 +321,7 @@ Widget cntan(){
                   ),
                   subtitle: Text(
                     '28, Jan 2020',
-                    style: TextStyle(
-                        color: Colors.black38
-                    ),
+                    style: TextStyle(color: Colors.black38),
                   ),
                   trailing: Text(
                     'N10,000',
@@ -314,7 +335,10 @@ Widget cntan(){
                 ListTile(
                   leading: CircleAvatar(
                     backgroundColor: Colors.lightGreen,
-                    child: Image.asset('assets/images/img_11.png',color: Colors.blue,),
+                    child: Image.asset(
+                      'assets/images/img_11.png',
+                      color: Colors.blue,
+                    ),
                   ),
                   title: Text(
                     'Access Bank ',
@@ -324,9 +348,7 @@ Widget cntan(){
                   ),
                   subtitle: Text(
                     '28, Jan 2020',
-                    style: TextStyle(
-                        color: Colors.black38
-                    ),
+                    style: TextStyle(color: Colors.black38),
                   ),
                   trailing: Text(
                     '\$2,400',
@@ -337,15 +359,10 @@ Widget cntan(){
                     ),
                   ),
                 ),
-                TextButton(onPressed: (){},
-                    child: Text('View All')),
-
+                TextButton(onPressed: () {}, child: Text('View All')),
               ],
             ),
           ),
         ],
-      )
-  );
+      ));
 }
-
-

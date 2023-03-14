@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:project_3/forgot.dart';
 import 'package:project_3/goit.dart';
+import 'package:project_3/openacnt.dart';
 
 class Login extends StatelessWidget {
   TextEditingController _emailController = TextEditingController();
@@ -110,7 +111,7 @@ class Login extends StatelessWidget {
                     child: TextButton(
                         onPressed: () {
                           Navigator.pushReplacement(context,
-                              CupertinoPageRoute(builder: (_)=> Forgot()));
+                              CupertinoPageRoute(builder: (_) => Forgot()));
                         },
                         child: Text(
                           'Forgot Password?',
@@ -121,49 +122,61 @@ class Login extends StatelessWidget {
                         )),
                   ),
                   SizedBox(
-                    width: 300,
+                      width: 300,
                       height: 60,
-
-                      child:
-                          ElevatedButton(
-                            
-                              onPressed: () {
-                                Navigator.pushReplacement(context, CupertinoPageRoute(builder: (_)=> Goit()));
-                              }
-                              ,style: ElevatedButton.styleFrom(
+                      child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.pushReplacement(context,
+                                CupertinoPageRoute(builder: (_) => Goit()));
+                          },
+                          style: ElevatedButton.styleFrom(
                             primary: Colors.green,
-                          ), child: Text('Login',
-                          style: TextStyle(
-                            fontSize: 20,
-                          ),))),
+                          ),
+                          child: Text(
+                            'Login',
+                            style: TextStyle(
+                              fontSize: 20,
+                            ),
+                          ))),
                   Padding(
                     padding: const EdgeInsets.only(left: 50),
                     child: Row(
                       children: [
-                        Text('Need an Account?',
-                        style: TextStyle(
-                          color: Colors.black45,
-                        ),),
-                        TextButton(onPressed: (){}, child: Text('Try Sutraq',
-                        style: TextStyle(
-                          color: Colors.greenAccent
-                        ),))
+                        Text(
+                          'Need an Account?',
+                          style: TextStyle(
+                            color: Colors.black45,
+                          ),
+                        ),
+                        TextButton(
+                            onPressed: () {
+                              OpenAccount();
+                            },
+                            child: Text(
+                              'Try Sutraq',
+                              style: TextStyle(color: Colors.greenAccent),
+                            ))
                       ],
                     ),
                   ),
-              Divider(),
+                  Divider(),
                   Padding(
                     padding: const EdgeInsets.only(left: 120),
-                    child: Image.asset('assets/images/img_1.png',
-                    width: 35,
-                    height: 35,),
+                    child: Image.asset(
+                      'assets/images/img_1.png',
+                      width: 35,
+                      height: 35,
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 90),
-                    child: Text('Tap to use fingerprint',style: TextStyle(
-                      color: Colors.black54,
-                      fontSize: 10,
-                    ),),
+                    child: Text(
+                      'Tap to use fingerprint',
+                      style: TextStyle(
+                        color: Colors.black54,
+                        fontSize: 10,
+                      ),
+                    ),
                   )
                 ],
               ),
